@@ -1,0 +1,242 @@
+:root {
+
+    /* colors */
+
+    --white: hsl(0, 0%, 100%);
+    --platinum: hsl(0, 0%, 92%);
+    --black_25: hsla(0, 0%, 0%, 0.25);
+    --black_80: hsla(0, 0%, 0%, 0.80);
+    --black_90: hsla(0, 0%, 0%, 0.9);
+    --emerald_25: hsl(152, 50%, 77%);
+    --emerald: hsl(152, 82%, 41%);
+    --medium-slate-blue: hsl(249, 80%, 67%);
+
+    /* typography */
+
+    --ff-roboto: 'Roboto', sans-serif;
+
+    --fs-1: 2rem;
+    --fs-2: 1.8rem;
+    --fs-3: 1.7rem;
+    --fs-4: 1.5rem;
+
+    --fw-400: 400;
+    --fw-500: 500;
+
+    /* border radius */
+
+    --radius-2: 2px;
+    --radius-5: 5px;
+    --radius-10: 10px;
+
+    /* shadow */
+
+    --shadow: 7px 9px 16px 1px hsla(0, 0%, 0%, 0.2);
+}
+
+/* RESET */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+input,
+button {
+    background: none;
+    border: none;
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+html {
+    font-size: 10px;
+    font-family: var(--ff-roboto);
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--black_90);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* TO-DO LIST */
+
+.task-container {
+    background-color: var(--platinum);
+    width: 50vw;
+    max-height: 80vh;
+    border-radius: var(--radius-10);
+}
+
+.title-container {
+    display: flex;
+    gap: 10px;
+    padding: 20px 30px;
+    border-bottom: 2px solid var(--black_25);
+}
+
+.main-container {
+    margin-left: 30px;
+}
+
+.input-title {
+    font-size: var(--fs-1);
+    font-weight: var(--fw-500);
+    padding: 30px 0 15px 0;
+}
+
+#input-task {
+    width: 65%;
+    padding: 15px;
+    margin-bottom: 8px;
+    border: 2px solid var(--black_25);
+    border-radius: var(--radius-5);
+    outline: none;
+}
+
+#input-task:hover {
+    border: 2px solid var(--medium-slate-blue);
+    border-radius: var(--radius-5);
+}
+
+.input-button {
+    background-color: var(--black_90);
+    width: 15%;
+    margin-left: 5px;
+    padding: 16.6px;
+    border-radius: var(--radius-5);
+    color: var(--white);
+    font-size: var(--fs-3);
+    font-weight: var(--fw-500);
+    box-shadow: var(--shadow);
+}
+
+.input-button:hover {
+    background-color: var(--black_80);
+}
+
+.search-id {
+    background-color: var(--black_90);
+    width: 15%;
+    margin-left: 5px;
+    padding: 16.6px;
+    border-radius: var(--radius-5);
+    color: var(--white);
+    font-size: var(--fs-3);
+    font-weight: var(--fw-500);
+    box-shadow: var(--shadow);
+}
+
+.search-id:hover {
+    background-color: var(--black_80);
+}
+
+.description {
+    color: var(--black_25);
+    font-size: var(--fs-4);
+    font-weight: var(--fw-500);
+}
+
+.list-title {
+    font-size: var(--fs-1);
+    font-weight: var(--fw-500);
+    padding: 35px 0 30px 0;
+}
+
+.list-container {
+    margin-bottom: 30px;
+    width: 47vw;
+    max-height: 35vh;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid var(--black_25);
+    border-radius: var(--radius-5);
+}
+
+.list:hover {
+    border: 2px solid var(--medium-slate-blue);
+    border-radius: var(--radius-5);
+}
+
+.icon-text {
+    color: var(--black_25);
+    cursor: pointer;
+}
+
+.to-do {
+    font-size: var(--fs-2);
+}
+
+.icon-trash {
+    color: var(--black_25);
+    cursor: pointer;
+    display: block;
+}
+
+input[type=checkbox] {
+    position: relative;
+    cursor: pointer;
+}
+
+input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -6px;
+    left: -12px;
+    border-radius: var(--radius-2);
+    background-color: var(--emerald_25);
+}
+
+input[type=checkbox]:checked:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -6px;
+    left: -12px;
+    border-radius: var(--radius-2);
+    background-color: var(--emerald);
+}
+
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 7px;
+    height: 14px;
+    border: solid var(--white);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: -2.2px;
+    left: -2.2px;
+}
